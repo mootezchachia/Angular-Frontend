@@ -1,0 +1,20 @@
+<center>
+<form  method="POST" action="/formation/update/{{data._id}}">
+<h1>Create new training</h1>
+
+<label>Title</label>
+<input type="text" name="Title" id="Title" value={{data.Title}}><br><br>
+
+<label>Description</label>
+<input type="text" name="Description" id="Description" value={{data.Description}}><br><br>
+
+<label>start At</label>
+<input type="date" name="StartAt" id="StartAt" value={{data.StartAt}}><br><br>
+
+<label>End At</label>
+<input type="date" name="EndAt" id="EndAt" value={{data.EndAt}}><br><br>
+
+<button type="submit">Update</button>
+
+</form>
+</center>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Esprit Events</string>
+    <string name="mustNotBeEmpty">Must not be empty !</string>
+    <string name="description1">Demain 20 Mai à partir de 9H au Bloc G, venez découvrir les jeux développés par nos étudiants de 1ère année durant l\'évènement GD3 (Game Design et Development Day) !!!</string>
+    <string name="description2">Ne ratez pas le rendez-vous annuel de l\'événement phare d\'Esprit  le #baldesprojets dans sa 9ème édition, demain, 03 Juin 2022, à partir de 9h au Bloc L, Esprit El Ghazela.</string>
+    <string name="description3">Nous avons l\'immense plaisir de vous inviter au Forum des Entreprises organisé par le Groupe ESPRIT (Esprit School of Business et Esprit School of Engineering) qui se tiendra à notre Campus à El Ghazala (Bâtiment G) le vendredi 10 Juin 2022 de 8H30 à 14h</string>
+
+</resources>

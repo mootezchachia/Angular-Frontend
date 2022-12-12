@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background_border2"
+    android:layout_margin="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/companyLogo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_logo_facebook"/>
+
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignEnd="@id/workDescription"
+            android:src="@drawable/ic_delete"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/gradiant_overlay" />
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_alignStart="@id/companyLogo"
+            android:layout_alignBottom="@id/companyLogo"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="COMPANY NAME" />
+
+        <TextView
+            android:id="@+id/companyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_alignBottom="@id/companyLogo"
+            android:layout_alignEnd="@id/companyLogo"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="COMPANY ADDRESS" />
+
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/companyLogo"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:text="START DATE"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/companyLogo"
+            android:layout_alignEnd="@id/companyLogo"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:text="END DATE"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/workDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endDate"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/loremIpsum"
+            android:textColor="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

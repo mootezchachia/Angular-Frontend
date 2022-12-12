@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.HobbiesFragment">
+
+    <RelativeLayout
+        android:id="@+id/rlt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/background_border">
+
+        <TextView
+            android:id="@+id/txtHobbies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@string/hobbies"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtHobbies"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/music"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbSport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/sport"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbGames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/games"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</FrameLayout>

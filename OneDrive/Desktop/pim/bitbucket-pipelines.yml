@@ -1,0 +1,39 @@
+definitions:
+  steps:
+    - script:
+        - &clone
+          git clone -v ${CLONE_OPTS} https://$BITBUCKET_USERNAME:$BITBUCKET_APP_PASSWORD@bitbucket.org/$BITBUCKET_REPO_FULL_NAME.git ${BASE}
+        - &zip
+          zip -r ${RELEASE} ./${BASE} -x '*.git*' '*bitbucket*' '*gulp*' '*package*.json' '*bower*' '*node_modules*' '*.map' '*.scss' '*assets/scss*'
+        - &2downloads
+          pipe: atlassian/bitbucket-upload-file:0.1.8
+          variables:
+            BITBUCKET_USERNAME: $BITBUCKET_USERNAME
+            BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+            FILENAME: ./${RELEASE}
+
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          image: atlassian/default-image:2
+          clone:
+            enabled: false
+          script:
+            - BASE=masterstudy-lms-learning-management-system-api && VERSION=${BITBUCKET_BRANCH////-} && RELEASE=${BASE}-${VERSION}.zip && echo $RELEASE
+            - CLONE_OPTS="--branch $BITBUCKET_BRANCH"
+            - *clone
+            - *zip
+            - *2downloads
+  tags:
+    '**':
+      - step:
+          image: atlassian/default-image:2
+          clone:
+            enabled: false
+          script:
+            - BASE=masterstudy-lms-learning-management-system-api && VERSION=${BITBUCKET_TAG} && RELEASE=${BASE}-${VERSION}.zip && echo $RELEASE
+            - CLONE_OPTS="--branch ${BITBUCKET_TAG}"
+            - *clone
+            - *zip
+            - *2downloads

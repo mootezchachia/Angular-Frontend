@@ -1,0 +1,30 @@
+ <style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+<center>
+<table style="table, th, td{border:1px solid black;}">
+<tr>
+    <td>Title</td>
+    <td>Description</td>
+    <td>Start date</td>
+    <td>End date </td>
+    <td>Actions</td>
+</tr>
+{% for item in data %}
+<tr>
+    <td>{{item.Title}}</td>
+    <td>{{item.Description}}</td>
+    <td>{{item.StartAt}}</td>
+    <td>{{item.EndAt}}</td>
+    <td><a href="/formation/updateFormation/{{item._id}}" >Edit</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="/formation/delete/{{item._id}}" >delete</a> </td> 
+</tr>
+ {% endfor %}
+</table>
+
+</center>

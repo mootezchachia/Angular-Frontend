@@ -1,0 +1,10 @@
+Update your Live class addon by following these simple steps.
+
+1. Login as Admin to your academy application. 
+2. Move to Addon manager from Addons section. You will find this on the left side menu.
+3. Click on "Addon update" button. It will take you to the addon updating page. Upload the addon zip file which is located at "Update_Pack" directory. Make sure that you are uploading the addon zip file from the Update_pack directory.
+4. Hit "Update Addon".
+
+That's it. If you have follwed instructions carefully, you should have the latest version of the addon installed on your application.
+
+N.B: MAKE SURE TO USE THE LATEST VERSION OF ZOOM APPLICATION WHILE ARRANGING ANY LIVE CLASS. ITS MANDATORY. OTHERWISE THINGS WILL NOT WORK HOW IT SUPPOSED TO DO.

@@ -1,0 +1,51 @@
+{
+    "name" : "Certificate",
+    "unique_identifier" : "certificate",
+    "version" : "1.0",
+    "about" : "This addon helps student to get certified. Academy provides a course completion certificate for each student after completing any course",
+    "directories" :
+    [
+        {
+            "name" : "uploads/certificates"
+        },
+        {
+            "name" : "application/views/certificate"
+        }
+    ],
+    "sql_file"  : "updater.php",
+    "files"     :
+    [
+        {
+            "root_directory"    : "uploads/addons/certificate/controllers/Certificate.php",
+            "update_directory"  : "application/controllers/addons/Certificate.php"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/models/Certificate_model.php",
+            "update_directory"  : "application/models/addons/Certificate_model.php"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/views/index.php",
+            "update_directory"  : "application/views/certificate/index.php"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/views/certificate_settings.php",
+            "update_directory"  : "application/views/backend/admin/certificate_settings.php"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/others/template.jpg",
+            "update_directory"  : "uploads/certificates/template.jpg"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/others/index.html",
+            "update_directory"  : "uploads/certificates/index.html"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/others/Palatino.ttf",
+            "update_directory"  : "system/fonts/Palatino.ttf"
+        },
+        {
+            "root_directory"    : "uploads/addons/certificate/others/Plebeya.otf",
+            "update_directory"  : "system/fonts/Plebeya.otf"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+import speech_recognition as sr
+from gtts import gTTS
+import os
+import openai
+
+# Set the language for the speech recognition and text-to-speech engines
+language = 'en'
+
+# Set the OpenAI API key
+openai.api_key = 'your_api_key'
+
+# Create a speech recognition engine
+r = sr.Recognizer()
+
+# Set the audio source
+mic = sr.Microphone()
+
+# Set the GPT model
+model = 'text-davinci-002'
+
+# Set the prompt prefix
+prefix = 'You said: '
+
+# Set the maximum response length
+max_length = 100
+
+# Set the response temperature
+temperature = 0.5
+
+# Start the speech recognition engine
+with mic as source:
+    r.adjust_for_ambient_noise(source)
+
+    # Listen for commands
+    while True:
+        print('Listening...')
+        audio = r.listen(source)
+
+        # Use the speech recognition engine to transcribe the audio
+        try:
+            command = r.recognize_google(audio, language=language)
+            print('You said: ' + command)
+
+            # Use the GPT model to generate a response
+            response = openai.Completion.create(
+                engine=model,
+                prompt=prefix + command,
+                max_tokens=max_length,
+                temperature=temperature,
+            )
+
+            # Get the text of the response
+            response_text = response['choices'][0]['text']
+
+            # Create a text-to-speech engine
+            tts = gTTS(response_text, lang=language)
+
+            # Save the audio to a file
+            tts.save('response.mp3')
+
+            # Play the audio file
+            os.system('response.mp3')
+        except sr.UnknownValueError:
+            print('I couldn't understand what you said.')
+        except sr.RequestError:
+            print('I am unable to connect to the speech recognition service.')
+This code uses the speech_recognition, gTTS, and openai libraries to create a speech recognition engine that listens for voice commands, uses the OpenAI GPT model to generate a response, and then uses the gTTS library to generate a text-to-speech audio file for the response, which is played using the os module.
+
+You will need to modify this code to use your own OpenAI API key and desired GPT model, as well as the correct language and response parameters. You may also want to customize the error handling and response handling. Additionally, note that the speech recognition, text-to-speech, and GPT engines may have limitations and errors, so you may need to implement additional logic to handle those cases.
